@@ -21,6 +21,7 @@ CE est pour un retour arrière  |      ln est pour la fonction log(x)      |    
 
 "sin" est en cours de programmation   |   "nCr" est incompréhensible   |  "deg" sera un jour peut etre
 "log" est juste après dans ma liste   |   "tan" me donne la migraine   |   "cos" est le némésis de sin
+
 ATTENTION : si vous utilisez des touches non importés, cela fera crash votre lorsque vous appuirez sur "=".
 Si un appuis arrive, utilisez la touche AC pour éviter un redémarage de la fonction
 
