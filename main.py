@@ -65,21 +65,39 @@ while running:
                             root.append(a)
                     if len(root)>0:
                         result = result[:root[0]-1] + "1/2.718**" +result[root[0]+1:]
-                #if "sin" in result:
-                    #root = []
-                    #for a in range(len(result)):
-                        #if result[a-2] + result[a-1] + result[a] == "sin":
-                            #root.append(a)
-                        #elif len(root) == 1 and result[a] not in ["0","1","2","3","4","5","6","7","8","9","."]:
-                            #root.append(a)
-                    #if len(root) == 2:
-                        #reset = 0
-                        #for b in range(int(result[root[0]+1:root[1]])):
-                            #div = [2*c+1 for c in range(1,b+1)]
-                            #for d in range(len(div)):
-                                #
-                            #reset += (-1)**b * (int(result[root[0]+1:root[1]])**(2*b + 1) / [2*c+1 for c in range(1,b+1)])
+                if "sin" in result:
+                    root = []
+                    for a in range(len(result)):
+                        if result[a-2] + result[a-1] + result[a] == "sin":
+                            root.append(a)
+                        elif len(root) == 1 and result[a] not in ["0","1","2","3","4","5","6","7","8","9","."]:
+                            root.append(a)
+                    print(root)
+                    if len(root) == 2:
+                        reset = 0
+                        for b in range(40):
+                            div = 1
+                            for c in range(2*b+1):
+                                div *= c+1
+                            reset += ((-1)**(b%2)) * ( ( float(result[root[0]+1:root[1]]) ** (2*b+1) ) / div)
+                        result = result[:root[0]-2] + str(reset) + result[root[1]:]
                         
+                if "cos" in result:
+                    root = []
+                    for a in range(len(result)):
+                        if result[a-2] + result[a-1] + result[a] == "cos":
+                            root.append(a)
+                        elif len(root) == 1 and result[a] not in ["0","1","2","3","4","5","6","7","8","9","."]:
+                            root.append(a)
+                    print(root)
+                    if len(root) == 2:
+                        reset = 0
+                        for b in range(40):
+                            div = 1
+                            for c in range(2*b):
+                                div *= c+1
+                            reset += ( ( (-1) **b) / div ) * ( float(result[root[0]+1:root[1]]) ** ( 2*b ) )
+                        result = result[:root[0]-2] + str(reset) + result[root[1]:]
                 result = result[:-1]
                 if order:
                     result += ")"
@@ -126,7 +144,7 @@ while running:
                 screen.blit(text,(280-9*len(result),18))
             elif result[-1] == "π":
                 result = result[:-1]
-                result += "3.14"
+                result += "3.14159265"
             elif result[-1] == "e":
                 result = result[:-1] + "*10**"
             elif len(result)>=3:
