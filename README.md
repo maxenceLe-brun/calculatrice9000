@@ -22,6 +22,21 @@ Donc, j'ai pas l'habitude d'écrire ici mais on fera avec
          "nCr" est incompréhensible       |  "deg" sera un jour peut etre  
     "log" est juste après dans ma liste   |   "tan" me donne la migraine  
 
+### Patch 1.0.1 : 23/01/23 2h20      
+
+    AJOUTS :
+    cos -> cosinus est désormais disponible! Précision plus ou moins fiable, a revoir
+    sin -> sinus implémenté! Niveau précision, comme cosinus.
+    
+    BUGS :
+    ln  -> calcul incorrect, en cours de formatage  
+    Log -> implémentation log(x) = ln(x)/ln(10). Inutile due au mauvais calcul de ln  
+    CE  -> Modifications sont prévus pour correctement supprimer la dernière "action" faite.
+    /!\ -> Le calcul de charactères seul autre que : 1,2,3,4,5,6,7,8,9,0,.,π risque de faire planter le programme.
+    
+    
+    
+
 ATTENTION : si vous utilisez des touches non importés, cela fera crash votre lorsque vous appuirez sur "=".  
 Si un appuis arrive, utilisez la touche AC pour éviter un redémarage de la fonction
 
